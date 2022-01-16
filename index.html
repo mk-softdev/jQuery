@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 2em;
+        }
+
+        .row {
+            padding: 1em;
+        }
+
+        .bg-1 {
+            background-color: red;
+        }
+
+        .bg-2 {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body class="bg-primary">
+    <h1>jQuery templates</h1>
+    <div class="container">
+        <h2>1.1 - jQuery Demo -- works on console api</h2>
+
+        <div class="row bg-success text-danger p-2">
+            <div class="col-md-6 bg-warning" id="box1">
+                <h3>Box 1</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum culpa a praesentium esse, nemo corrupti
+                    accusantium sit, totam pariatur odio omnis? At optio dolorem, et impedit consequatur consequuntur
+                    saepe amet vero deserunt explicabo eum minima est quas facilis quibusdam, sapiente porro maiores.
+                    Eius voluptas aliquam debitis eligendi vero dolores tempora necessitatibus blanditiis delectus quas
+                    cumque, alias illo sunt in. Animi dolor quo rem quibusdam ea adipisci, maxime consectetur pariatur
+                    iure voluptas? Sit, exercitationem delectus iure libero expedita soluta qui odio quaerat eius illum
+                    consectetur nobis ratione fugiat quae! Error necessitatibus doloremque dignissimos sit a sapiente
+                    ipsam optio est quas qui dolorum animi cum quasi excepturi quam in nihil nobis perferendis
+                    voluptatem, maiores veniam ipsum molestiae, libero inventore. Cumque, sequi numquam.</p>
+            </div>
+            <div class="col-md-6 bg-info" id="box2">
+                <h3>Box 2</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio tempora autem quasi, animi beatae eos
+                    earum minus sapiente inventore impedit in architecto consequatur eaque vitae ad consequuntur ut!
+                    Rerum cum libero maiores expedita vero rem nisi ipsa fugit sunt soluta accusantium corrupti
+                    accusamus dicta eum reprehenderit, ullam, esse deleniti! Repudiandae!</p>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            let a = $('#box1').html();
+            let b = $('#box2').html();
+            console.log(a);
+            console.log(b);
+        })
+    </script>
+    <hr>
+    <div class="container">
+        <h2>1.2 - Selectors</h2>
+        <div class="row bg-danger">
+            <div class="col-md-3 bg-1" id="box3">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ab fugit reprehenderit iure molestiae,
+                    voluptates cum aliquam eius officia aperiam.
+                </p>
+            </div>
+            <div class="col-md-3 bg-2">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam maxime repellat, fugit nam,
+                    laborum laudantium odit totam eveniet dolorem explicabo optio quae nemo, ducimus aspernatur
+                    molestiae ea quod modi. Veniam!
+                </p>
+            </div>
+
+            <div class="col-md-3 text-danger">
+                <ul id="fruits">
+                    <li>Orange</li>
+                    <li>Banana</li>
+                    <li class="fav">Mango</li>
+                    <li>Strubbery</li>
+                    <li>Pineapple</li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 text-info">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa quae et explicabo quia, illo error asperiores cum.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa quae et explicabo quia, illo error asperiores cum.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa quae et explicabo quia, illo error asperiores cum.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa quae et explicabo quia, illo error asperiores cum.</p>
+            </div>
+
+        </div>
+    </div>
+
+<script>
+    $(document).ready(function(){
+        // $('*').css({'background':'indigo'});
+        $('#fruits').css({'font-size':'20px','color':'green'});
+        $('#fruits li').css({'border-bottom':'dotted 2px blue'});
+        $('#fruits li:first-child').css({'background':'green','color':'yellow'});
+        $('#fruits li:last-child').css({'background':'red','color':'yellow'});
+        $('#fruits li:eq(2)').css({'font-size':'40px'});
+        $('#fruits li.fav').css({'color':'purple'});
+        $('.row').css({'border':'solid 2px red'});
+        $('.text-info').css({'font-size':'12px'})
+        $('.text-info p').css({'color':'blue'})
+        $('.text-info p:lt(2)').css({'background':'red','color':'white','padding':'1em'})
+    })
+</script>
+
+</body>
+
+</html>
