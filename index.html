@@ -31,13 +31,20 @@
         .bg-2 {
             background-color: greenyellow;
         }
+
+        input,
+        select,
+        option {
+            padding: .5em;
+            background-color: crimson;
+        }
     </style>
 </head>
 
 <body class="bg-primary">
     <h1>jQuery templates</h1>
     <div class="container">
-        <h2>1.1 - jQuery Demo -- works on console api</h2>
+        <h2>Chapter 1 - jQuery Demo -- works on console api</h2>
 
         <div class="row bg-success text-danger p-2">
             <div class="col-md-6 bg-warning" id="box1">
@@ -73,7 +80,7 @@
     </script>
     <hr>
     <div class="container">
-        <h2>1.2 - Selectors</h2>
+        <h2>Chapter 2 - Selectors</h2>
         <div class="row bg-danger">
             <div class="col-md-3 bg-1" id="box3">
                 <p>
@@ -100,30 +107,139 @@
             </div>
 
             <div class="col-md-3 text-info">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa quae et explicabo quia, illo error asperiores cum.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa quae et explicabo quia, illo error asperiores cum.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa quae et explicabo quia, illo error asperiores cum.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa quae et explicabo quia, illo error asperiores cum.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa
+                    quae et explicabo quia, illo error asperiores cum.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa
+                    quae et explicabo quia, illo error asperiores cum.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa
+                    quae et explicabo quia, illo error asperiores cum.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem quibusdam ipsa
+                    quae et explicabo quia, illo error asperiores cum.</p>
             </div>
 
         </div>
     </div>
 
-<script>
-    $(document).ready(function(){
-        // $('*').css({'background':'indigo'});
-        $('#fruits').css({'font-size':'20px','color':'green'});
-        $('#fruits li').css({'border-bottom':'dotted 2px blue'});
-        $('#fruits li:first-child').css({'background':'green','color':'yellow'});
-        $('#fruits li:last-child').css({'background':'red','color':'yellow'});
-        $('#fruits li:eq(2)').css({'font-size':'40px'});
-        $('#fruits li.fav').css({'color':'purple'});
-        $('.row').css({'border':'solid 2px red'});
-        $('.text-info').css({'font-size':'12px'})
-        $('.text-info p').css({'color':'blue'})
-        $('.text-info p:lt(2)').css({'background':'red','color':'white','padding':'1em'})
-    })
+    <script>
+        $(document).ready(function () {
+            // $('*').css({'background':'indigo'});
+            $('#fruits').css({ 'font-size': '20px', 'color': 'green' });
+            $('#fruits li').css({ 'border-bottom': 'dotted 2px blue' });
+            $('#fruits li:first-child').css({ 'background': 'green', 'color': 'yellow' });
+            $('#fruits li:last-child').css({ 'background': 'red', 'color': 'yellow' });
+            $('#fruits li:eq(2)').css({ 'font-size': '40px' });
+            $('#fruits li.fav').css({ 'color': 'purple' });
+            $('.row').css({ 'border': 'solid 2px red' });
+            $('.text-info').css({ 'font-size': '12px' })
+            $('.text-info p').css({ 'color': 'blue' })
+            $('.text-info p:lt(2)').css({ 'background': 'red', 'color': 'white', 'padding': '1em' })
+        })
+    </script>
+
+    <hr>
+    <div class="container">
+        <h2>Chapter 3 - Mouse events</h2>
+        <div class="row">
+            <div class="col-md-3 bg-warning text-danger" id="mousebox">
+                <h3>Mousebox 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci voluptatibus, nam rerum voluptate
+                    harum qui illum reiciendis delectus placeat fugit.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#mousebox').click(function () {
+                $('#mousebox').css({ 'background-color': 'red', 'color': 'white' })
+                let a = $('#mousebox').html();
+                console.log(a);
+            })
+            $('#mousebox').dblclick(function () {
+                $('#mousebox').css({ 'background': 'blue', 'color': 'yellow' })
+            })
+            $('#mousebox').contextmenu(function () {
+                $('#mousebox').css({ 'background': 'orange', 'color': 'indigo' })
+            })
+
+            $('#mousebox').mouseenter(function () {
+                $('#mousebox').css({ 'background': 'indigo', 'color': 'tan' })
+            })
+
+            $('#mousebox').mouseleave(function () {
+                $('#mousebox').css({ 'background': 'white', 'color': 'black' })
+            })
+
+
+        })
+    </script>
+    <hr>
+    <div class="container">
+        <h2>Chapter 4 - Keyboard events</h2>
+        <div class="row">
+            <div class="col-md-3 bg-info text-danger" id="keyboard">
+                <h3>Keyboard box</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci voluptatibus, nam rerum voluptate
+                    harum qui illum reiciendis delectus placeat fugit.</p>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('body').keypress(function () {
+                    // $(this).css({'background':'yellow'});
+                })
+                $('body').keyup(function () {
+                    // $(this).css({'background':'red'});
+                })
+                $('body').keydown(function () {
+                    // $(this).css({'background':'indigo'});
+                })
+
+
+            })
+        </script>
+
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row bg-2 text-white">
+            <h2>Chapter 5 - Form events</h2>
+            <div class="col-md-3">
+
+
+
+
+                <form id="myForm">
+                    <label for="name">Name</label> <input type="text" name="name" id="name"><br>
+
+                    <label for="class">Class</label> <input type="text" name="class" id="class"><br>
+                    <label for="country">Country</label>
+                    <select name="country" id="country">
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Bhutan">Bhutan</option>
+                    </select>
+                    <br><br>
+                    <button type="button" id="submit">Submit</button>
+                    <br><br>
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+            <div class="col-md-3 bg-1">
+                <h3>Getting Form Values</h3>
+                <p id="getName">Name: </p>
+                <p id="getClass">Class: </p>
+                <p id="getCountry">Selected country: </p>
+            </div>
+        </div>
+    </div>
+<script src="form.js">
 </script>
+
 
 </body>
 
